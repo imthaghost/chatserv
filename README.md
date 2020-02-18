@@ -58,10 +58,10 @@ gochat is a simple CLI chat client
 
 ## Deliverables
 
-[] There is a single chat room
-[] User can connect to the server
-[] User can set their name
-[] User can send the message to the room, and the message will be broadcast to all other users.
+[ ] There is a single chat room
+[ ] User can connect to the server
+[ ] User can set their name
+[ ] User can send the message to the room, and the message will be broadcast to all other users.
 
 ## Getting started
 

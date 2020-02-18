@@ -19,7 +19,12 @@ gochat is a simple CLI chat client
 </p>
 <br>
 
-![landing](docs/media/chat.png)
+<br>
+<p align="center">
+   <a href="#"><img src="https://github.com/imthaghost/gochat/blob/master/docs/media/chat.png"></a>  
+</p>
+<br>
+<!-- ![landing](docs/media/chat.png) -->
 
 ### 📚 Table of Contents
 

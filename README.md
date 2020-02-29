@@ -28,44 +28,58 @@ A chatserver written in GO
 
 ### 📚 Table of Contents
 
-1. [Project Structure](#project-structure)
+1. [Deliverables](#deliverables)
 2. [Getting Started](#getting-started)
-3. [Deliverables](#deliverables)
-4. [Resources](#resources)
+3. [ProjectStructure](#project-structure)
 
 ## Deliverables
 
-[ ]There is a single chat room
-[ ]User can connect to the server
-[ ]User can set their name
-[ ]User can send the message to the room, and the message will be broadcast to all other users.
+-   [x] Single chat room
+-   [x] Users can connect to the server
+-   [x] Users can set their name
+-   [x] Users can send the message to the room
+-   [x] Users can see all other user's messages
 
 ## Getting started
 
 ```bash
-# in the server directory
+# in the server directory start the tcp-server
 go run main.go
+# change to user-interface directory
+cd tui
+# dial to the tcp-sever
+go run main.go --server localhost:3333
+
 ```
 
 ## Project Structure
 
 ```bash
-📂 gochat
+📂 chatserv
 ├── README.md
 ├── client
-│   └── client.go
+│   ├── client.go
+│   └── tcp_client.go
 ├── docs
 │   └── media
 │       └── chat.png
 ├── go.mod
 ├── go.sum
 ├── protocol
-│   └── writer.go
+│   ├── command.go
+│   ├── reader.go
+│   ├── reader_test.go
+│   ├── writer.go
+│   └── writer_test.go
 ├── server
-├── server.go
-└── ui
+│   ├── cmd
+│   │   └── main.go
+│   ├── server.go
+│   └── tcp_server.go
+└── tui
     ├── chatview.go
     ├── cmd
     │   └── main.go
+    ├── loginview.go
     └── tui.go
 ```

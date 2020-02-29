@@ -5,12 +5,10 @@ import (
 	"io"
 )
 
-// CommandWriter ...
 type CommandWriter struct {
 	writer io.Writer
 }
 
-// NewCommandWriter ...
 func NewCommandWriter(writer io.Writer) *CommandWriter {
 	return &CommandWriter{
 		writer: writer,

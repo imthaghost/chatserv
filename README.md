@@ -7,7 +7,7 @@
 <br>
 
 <p align="center">
-gochat is a simple CLI chat client
+A chatserver written in GO 
 </p>
 
 <br>
@@ -33,6 +33,20 @@ gochat is a simple CLI chat client
 3. [Deliverables](#deliverables)
 4. [Resources](#resources)
 
+## Deliverables
+
+[ ]There is a single chat room
+[ ]User can connect to the server
+[ ]User can set their name
+[ ]User can send the message to the room, and the message will be broadcast to all other users.
+
+## Getting started
+
+```bash
+# in the server directory
+go run main.go
+```
+
 ## Project Structure
 
 ```bash
@@ -54,19 +68,4 @@ gochat is a simple CLI chat client
     ├── cmd
     │   └── main.go
     └── tui.go
-```
-
-## Deliverables
-
-[ ] There is a single chat room
-[ ] User can connect to the server
-[ ] User can set their name
-[ ] User can send the message to the room, and the message will be broadcast to all other users.
-
-## Getting started
-
-> Start the server
-
-```bash
-go run server.go
 ```

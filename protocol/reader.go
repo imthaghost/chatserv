@@ -6,6 +6,7 @@ import (
 	"log"
 )
 
+// CommandReader ...
 type CommandReader struct {
 	reader *bufio.Reader
 }

@@ -5,10 +5,12 @@ import (
 	"io"
 )
 
+//CommandWriter interface
 type CommandWriter struct {
 	writer io.Writer
 }
 
+//NewCommandWriter writes commands to the TCP-server
 func NewCommandWriter(writer io.Writer) *CommandWriter {
 	return &CommandWriter{
 		writer: writer,

@@ -24,13 +24,12 @@ A chatserver written in GO
    <a href="#"><img src="https://github.com/imthaghost/gochat/blob/master/docs/media/chat.png"></a>  
 </p>
 <br>
-<!-- ![landing](docs/media/chat.png) -->
 
 ### 📚 Table of Contents
 
 1. [Deliverables](#deliverables)
 2. [Getting Started](#getting-started)
-3. [ProjectStructure](#project-structure)
+3. [Local Development](#local-development)
 
 ## Deliverables
 
@@ -42,44 +41,79 @@ A chatserver written in GO
 
 ## Getting started
 
-```bash
-# in the server directory start the tcp-server
-go run main.go
-# change to user-interface directory
-cd tui
-# dial to the tcp-sever
-go run main.go --server localhost:3333
+### Installation
 
+```sh
+$ go get github.com/imthaghost/chatserv
 ```
 
-## Project Structure
+### Getting Started
 
-```bash
-📂 chatserv
-├── README.md
-├── client
-│   ├── client.go
-│   └── tcp_client.go
-├── docs
-│   └── media
-│       └── chat.png
-├── go.mod
-├── go.sum
-├── protocol
-│   ├── command.go
-│   ├── reader.go
-│   ├── reader_test.go
-│   ├── writer.go
-│   └── writer_test.go
-├── server
-│   ├── cmd
-│   │   └── main.go
-│   ├── server.go
-│   └── tcp_server.go
-└── tui
-    ├── chatview.go
-    ├── cmd
-    │   └── main.go
-    ├── loginview.go
-    └── tui.go
+server.go
+
+```go
+package main
+
+import (
+	"github.com/imthaghost/chatserv/server"
+)
+
+func main() {
+	var s server.ChatServer
+	s = server.NewServer()
+	s.Listen(":3333")
+
+	// start the server
+	s.Start()
+}
+```
+
+client.go
+
+```go
+package main
+
+import (
+	"flag"
+	"log"
+
+	"github.com/imthaghost/chatserv/client"
+	"github.com/imthaghost/chatserv/tui"
+)
+
+func main() {
+	address := flag.String("server", "", "Which server to connect to")
+
+	flag.Parse()
+
+	client := client.NewClient()
+	err := client.Dial(*address)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	defer client.Close()
+
+	// start the client to listen for incoming message
+	go client.Start()
+
+	tui.StartUi(client)
+}
+```
+
+```sh
+# we start the irc server
+$ go run server.go --server localhost:3333
+# in a new termnal window we start the client
+$ go run client.go
+```
+
+## Local Development
+
+```sh
+# inside github.com/imthaghost/server/ircserver
+$ go run main.go
+# inside github.com/imthaghost/tui/irc
+$ go run main.go --server localhost:3333
 ```

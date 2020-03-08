@@ -102,11 +102,13 @@ func main() {
 }
 ```
 
+### Run
+
 ```sh
 # we start the irc server
-$ go run server.go --server localhost:3333
+$ go run server.go
 # in a new termnal window we start the client
-$ go run client.go
+$ go run client.go --server localhost:3333
 ```
 
 ## Local Development

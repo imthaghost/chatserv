@@ -109,6 +109,8 @@ $ go run server.go
 $ go run client.go --server localhost:3333
 ```
 
+## Demo
+
 ![Example](/docs/media/client.gif)
 
 ## Local Development

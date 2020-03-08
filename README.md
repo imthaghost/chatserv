@@ -109,7 +109,7 @@ $ go run server.go
 $ go run client.go --server localhost:3333
 ```
 
-![Example](/docs/mediam/client.gif)
+![Example](/docs/media/client.gif)
 
 ## Local Development
 

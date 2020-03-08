@@ -39,17 +39,15 @@ A chatserver written in GO
 -   [x] Users can send the message to the room
 -   [x] Users can see all other user's messages
 
-## Getting started
-
-### Installation
+## Installation
 
 ```sh
 $ go get github.com/imthaghost/chatserv
 ```
 
-### Getting Started
+## Getting Started
 
-server.go
+### server.go
 
 ```go
 package main
@@ -68,7 +66,7 @@ func main() {
 }
 ```
 
-client.go
+### client.go
 
 ```go
 package main
